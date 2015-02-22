@@ -4,7 +4,7 @@ function! TeRunSilent(cmd)
 endfunction
 
 command! TeRunTestFile :call TeRunTestFile()
-function! RunTestFile()
+function! TeRunTestFile()
   let testCmd = "te run " . expand("%:p") . " &"
   call TeRunSilent(testCmd)
 endfunction
