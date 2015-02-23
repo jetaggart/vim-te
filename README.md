@@ -5,7 +5,9 @@ Universal test running either synchronously or asynchronously. Vim interface to 
 
 # Installation
 
-Recommended installation with Vundle:
+The `te` executable must be on your PATH. Please visit [te](https://github.com/jetaggart/te) and follow the instructions there.
+
+Install the vim plugin your way. For example with Vundle:
 
 ```
 Plugin 'jetaggart/vim-te'
