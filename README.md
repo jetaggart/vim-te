@@ -1,6 +1,16 @@
 # vim-te
 
-Vim interface to [te](https://github.com/jetaggart/te)
+Universal test running either synchronously or asynchronously. Vim interface to [te](https://github.com/jetaggart/te)
+
+
+# Installation
+
+Recommended installation with Vundle:
+
+```
+Plugin 'jetaggart/vim-te'
+```
+
 
 ## Usage
 
@@ -9,6 +19,7 @@ Vim interface to [te](https://github.com/jetaggart/te)
 `<leader>tf` => test file
 
 `<leader>tl` => test line number
+
 
 ## License
 
