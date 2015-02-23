@@ -1,13 +1,13 @@
 function! TeRunSilent(cmd)
-  let g:te_last_test_cmd = cmd
+  let s:te_last_test_cmd = a:cmd
   execute "silent !" . a:cmd
   execute "redraw!"
 endfunction
 
 command! TeRunLastTest : call TeRunLastTest()
 function! TeRunLastTest()
-  if exists("g:te_last_test_cmd")
-    call TeRunSilent(g:te_last_test_cmd)
+  if exists("s:te_last_test_cmd")
+    call TeRunSilent(s:te_last_test_cmd)
   endif
 endfunction
 
