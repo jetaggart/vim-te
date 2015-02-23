@@ -20,6 +20,7 @@ Plugin 'jetaggart/vim-te'
 
 `<leader>tl` => test line number
 
+`<leader>tt` => run last test
 
 ## License
 
