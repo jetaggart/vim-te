@@ -1,12 +1,12 @@
 function! TeRunSilent(cmd)
-  let s:last_test_cmd = cmd
+  let g:te_last_test_cmd = cmd
   execute "silent !" . a:cmd
   execute "redraw!"
 endfunction
 
-command! TeRunLastTest
+command! TeRunLastTest : call TeRunLastTest()
 function! TeRunLastTest()
-  if exists("s:last_spec_location")
+  if exists("g:te_last_test_cmd")
     call TeRunSilent(s:last_test_cmd)
   endif
 endfunction
