@@ -24,6 +24,9 @@ Plugin 'jetaggart/vim-te'
 
 `<leader>tt` => run last test
 
+To run synchronously, just run the commands above. To run asynchronously, run
+`te listen` at a shell of your choice and run the commands above.
+
 ## License
 
 Copyright (c) Jeff Taggart.  Distributed under the same terms as Vim itself.
