@@ -7,7 +7,7 @@ endfunction
 command! TeRunLastTest : call TeRunLastTest()
 function! TeRunLastTest()
   if exists("g:te_last_test_cmd")
-    call TeRunSilent(s:last_test_cmd)
+    call TeRunSilent(g:te_last_test_cmd)
   endif
 endfunction
 
