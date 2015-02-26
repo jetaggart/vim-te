@@ -1,32 +1,41 @@
-function! TeRunSilent(cmd)
+function! TeRun(cmd)
   let s:te_last_test_cmd = a:cmd
-  execute "silent !" . a:cmd
-  execute "redraw!"
+
+  call system("te async-available")
+
+  if v:shell_error == 0
+    silent !clear
+    execute "silent !" . a:cmd . " &"
+    execute "redraw!"
+  else
+    silent !clear
+    execute "!" . a:cmd
+  endif
 endfunction
 
 command! TeRunLastTest : call TeRunLastTest()
 function! TeRunLastTest()
   if exists("s:te_last_test_cmd")
-    call TeRunSilent(s:te_last_test_cmd)
+    call TeRun(s:te_last_test_cmd)
   endif
 endfunction
 
 command! TeRunAll : call TeRunAll()
 function! TeRunAll()
   let testCmd = "te run"
-  call TeRunSilent(testCmd)
+  call TeRun(testCmd)
 endfunction
 
 command! TeRunTestFile :call TeRunTestFile()
 function! TeRunTestFile()
-  let testCmd = "te run " . expand("%:p") . " &"
-  call TeRunSilent(testCmd)
+  let testCmd = "te run " . expand("%:p")
+  call TeRun(testCmd)
 endfunction
 
 command! TeRunTestLine :call TeRunTestLine()
 function! TeRunTestLine()
-  let testCmd = "te run " . expand("%:p") . ":" . line(".") . " &"
-  call TeRunSilent(testCmd)
+  let testCmd = "te run " . expand("%:p") . ":" . line(".")
+  call TeRun(testCmd)
 endfunction
 
 noremap <silent> <leader>ta :TeRunAll<CR>
