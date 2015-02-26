@@ -1,6 +1,6 @@
 # vim-te
 
-Universal test running either synchronously or asynchronously. Vim interface to [te](https://github.com/jetaggart/te).
+Universal test running either synchronously or asynchronously. Vim interface to [te](https://github.com/jetaggart/te). Only supports terminal vim on *nix right now. If you know Vimscript, help is much appreciated.
 
 
 # Installation
