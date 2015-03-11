@@ -1,6 +1,4 @@
 function! TeRun(cmd)
-  let s:te_last_test_cmd = a:cmd
-
   call system("te async-available")
 
   if v:shell_error == 0
@@ -15,9 +13,7 @@ endfunction
 
 command! TeRunLastTest : call TeRunLastTest()
 function! TeRunLastTest()
-  if exists("s:te_last_test_cmd")
-    call TeRun(s:te_last_test_cmd)
-  endif
+  call TeRun("te run-last")
 endfunction
 
 command! TeRunAll : call TeRunAll()
